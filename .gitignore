@@ -1,76 +1,73 @@
-# Root .gitignore for fullstack Angular + Node.js + Prisma project
+# =============================
+# 🌐 CurrentCy_UI (Angular)
+# =============================
 
-##############################
-# Node.js (CurrentCy_Backend)
-##############################
+CurrentCy_UI/node_modules/
+CurrentCy_UI/dist/
+CurrentCy_UI/.angular/
+CurrentCy_UI/.env
+CurrentCy_UI/.vscode/
+CurrentCy_UI/.DS_Store
+CurrentCy_UI/*.log
+
+# Angular build/cache artifacts
+CurrentCy_UI/.angular/cache/
+CurrentCy_UI/.output/
+
+# Environment-specific files (optional)
+CurrentCy_UI/.env.*
+CurrentCy_UI/src/environments/environment.*.ts
+
+# IDE/editor files
+CurrentCy_UI/.idea/
+CurrentCy_UI/*.sublime-*
+
+# =============================
+# 🖥️ CurrentCy_Backend (Node.js + Prisma)
+# =============================
+
 CurrentCy_Backend/node_modules/
 CurrentCy_Backend/.env
-CurrentCy_Backend/dist/
-CurrentCy_Backend/.DS_Store
-CurrentCy_Backend/.parcel-cache/
-CurrentCy_Backend/*.log
-CurrentCy_Backend/npm-debug.log*
-CurrentCy_Backend/yarn-debug.log*
-CurrentCy_Backend/yarn-error.log*
 CurrentCy_Backend/.vscode/
+CurrentCy_Backend/.DS_Store
+CurrentCy_Backend/*.log
 
-# Prisma
+# Prisma generated files / local db
 CurrentCy_Backend/prisma/dev.db
 CurrentCy_Backend/prisma/dev.db-journal
 CurrentCy_Backend/prisma/.env
 CurrentCy_Backend/prisma/migrations/
 
-##############################
-# Angular (CurrentCy_UI)
-##############################
-CurrentCy_UI/node_modules/
-CurrentCy_UI/dist/
-CurrentCy_UI/.angular/cache/
-CurrentCy_UI/.env
-CurrentCy_UI/.DS_Store
-CurrentCy_UI/.vscode/
-CurrentCy_UI/*.log
-CurrentCy_UI/.angular/cache/
-CurrentCy_UI/.angular/
+# Logs
+CurrentCy_Backend/npm-debug.log*
+CurrentCy_Backend/yarn-debug.log*
+CurrentCy_Backend/yarn-error.log*
 
-# Angular build artifacts
-CurrentCy_UI/.angular/
-CurrentCy_UI/.output/
+# Optional build/output folders
+CurrentCy_Backend/dist/
+CurrentCy_Backend/build/
+CurrentCy_Backend/.parcel-cache/
 
-##############################
-# Global
-##############################
-*.log
-*.env
+# =============================
+# 💻 Global ignores (IDE/editor/OS)
+# =============================
+
+# macOS
 .DS_Store
-Thumbs.db
-.env.*
-.idea/
-*.iml
-*.suo
-*.swp
-*.tmp
-*.bak
-*.old
-*.orig
 
-# OS-specific
+# Windows
+Thumbs.db
 ehthumbs.db
-Icon?
 Desktop.ini
 $RECYCLE.BIN/
 
-# IDEs/editors
+# Linux
+*.swp
+
+# VSCode
 .vscode/
 *.code-workspace
-*.sublime-workspace
-*.sublime-project
-*.editorconfig
 
-##############################
-# Optional: Environment-specific
-##############################
-.env.local
-.env.development
-.env.production
-.env.test
+# JetBrains IDEs
+.idea/
+*.iml
