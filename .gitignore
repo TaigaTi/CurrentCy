@@ -1,0 +1,76 @@
+# Root .gitignore for fullstack Angular + Node.js + Prisma project
+
+##############################
+# Node.js (CurrentCy_Backend)
+##############################
+CurrentCy_Backend/node_modules/
+CurrentCy_Backend/.env
+CurrentCy_Backend/dist/
+CurrentCy_Backend/.DS_Store
+CurrentCy_Backend/.parcel-cache/
+CurrentCy_Backend/*.log
+CurrentCy_Backend/npm-debug.log*
+CurrentCy_Backend/yarn-debug.log*
+CurrentCy_Backend/yarn-error.log*
+CurrentCy_Backend/.vscode/
+
+# Prisma
+CurrentCy_Backend/prisma/dev.db
+CurrentCy_Backend/prisma/dev.db-journal
+CurrentCy_Backend/prisma/.env
+CurrentCy_Backend/prisma/migrations/
+
+##############################
+# Angular (CurrentCy_UI)
+##############################
+CurrentCy_UI/node_modules/
+CurrentCy_UI/dist/
+CurrentCy_UI/.angular/cache/
+CurrentCy_UI/.env
+CurrentCy_UI/.DS_Store
+CurrentCy_UI/.vscode/
+CurrentCy_UI/*.log
+CurrentCy_UI/.angular/cache/
+CurrentCy_UI/.angular/
+
+# Angular build artifacts
+CurrentCy_UI/.angular/
+CurrentCy_UI/.output/
+
+##############################
+# Global
+##############################
+*.log
+*.env
+.DS_Store
+Thumbs.db
+.env.*
+.idea/
+*.iml
+*.suo
+*.swp
+*.tmp
+*.bak
+*.old
+*.orig
+
+# OS-specific
+ehthumbs.db
+Icon?
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDEs/editors
+.vscode/
+*.code-workspace
+*.sublime-workspace
+*.sublime-project
+*.editorconfig
+
+##############################
+# Optional: Environment-specific
+##############################
+.env.local
+.env.development
+.env.production
+.env.test
