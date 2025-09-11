@@ -1,4 +1,4 @@
-# CurrentCy
+#  💵 CurrentCy
 
 ## Overview
 
