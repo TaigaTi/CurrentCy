@@ -1,0 +1,55 @@
+
+// Global playful green theme
+:root {
+	--primary-green: #43e97b;
+	--primary-green-dark: #2ecc71;
+	--primary-green-light: #38f9d7;
+	--white: #fff;
+	--gray-bg: #f8f9fa;
+	--shadow: 0 2px 8px rgba(67, 233, 123, 0.08);
+	--radius: 18px;
+	--font-main: 'Segoe UI', 'Inter', Arial, sans-serif;
+}
+
+html, body {
+	min-height: 100vh;
+	background: var(--gray-bg);
+	font-family: var(--font-main);
+	margin: 0;
+	padding: 0;
+	color: #222;
+}
+
+button, input, select {
+	font-family: inherit;
+	font-size: 1rem;
+}
+
+a {
+	color: var(--primary-green-dark);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+a:hover {
+	color: var(--primary-green);
+}
+
+// Utility classes
+.centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (max-width: 600px) {
+	.navbar {
+		flex-direction: column;
+		padding: 1rem 0.5rem;
+	}
+	.converter-form {
+		padding: 1rem 0.5rem;
+	}
+	.home-container h1 {
+		font-size: 2rem;
+	}
+}
