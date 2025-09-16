@@ -7,52 +7,8 @@ import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angula
   selector: 'app-converter',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  template: `
-    <div class="converter-container">
-      <h2 class="converter-title">
-        <span class="converter-icon">💱</span> Currency Converter
-      </h2>
-      @if (loading()) {
-        <div class="loading">Loading currencies...</div>
-      } @else {
-        <form [formGroup]="form" (ngSubmit)="convert()" class="converter-form-vertical">
-          <div class="form-group">
-            <label for="amount">Amount</label>
-            <input id="amount" type="number" formControlName="amount" placeholder="Enter amount" min="0" required />
-          </div>
-          <div class="form-group">
-            <label for="from">From</label>
-            <select id="from" formControlName="from" required>
-              <option value="" disabled selected>Select currency</option>
-              @for (code of currencies(); track code) {
-                <option [value]="code">{{ code }}</option>
-              }
-            </select>
-          </div>
-          <div class="swap-group-vertical">
-            <span class="swap" (click)="swap()" title="Swap currencies">⇄</span>
-          </div>
-          <div class="form-group">
-            <label for="to">To</label>
-            <select id="to" formControlName="to" required>
-              <option value="" disabled selected>Select currency</option>
-              @for (code of currencies(); track code) {
-                <option [value]="code">{{ code }}</option>
-              }
-            </select>
-          </div>
-          <button type="submit" [disabled]="form.invalid || loading()" class="convert-btn-vertical">Convert</button>
-        </form>
-        @if (error()) {
-          <div class="error">{{ error() }}</div>
-        }
-        @if (result()) {
-          <div class="result">{{ result() }}</div>
-        }
-      }
-    </div>
-  `,
-  styleUrl: './converter.scss',
+  templateUrl: './converter.html',
+  styleUrls: ['./converter.scss'],
   providers: [CurrencyService],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
