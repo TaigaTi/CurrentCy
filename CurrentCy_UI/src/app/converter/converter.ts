@@ -1,7 +1,8 @@
 import { Component, signal, effect, inject, ChangeDetectionStrategy } from '@angular/core';
-import { CurrencyService } from '../services/currency-service';
+import { CurrencyService } from '../services/currency-service/currency-service';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Convert } from '../services/convert/convert';
 
 @Component({
   selector: 'app-converter',
@@ -17,6 +18,7 @@ import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angula
 })
 export class Converter {
   private currencyService = inject(CurrencyService);
+  private convertService = inject(Convert);
   private fb = inject(FormBuilder);
 
   currencies = signal<string[]>([]);
@@ -62,9 +64,15 @@ export class Converter {
       return;
     }
     const { amount, from, to } = this.form.value;
-    // For demo, just show a fake conversion
-    const converted = (Number(amount) * 1.23).toFixed(2);
-    this.result.set(`${amount} ${from} ≈ ${converted} ${to}`);
+    
+    this.convertService.getConversion(from, to, amount).subscribe({
+      next: (response) => {
+        this.result.set(response.result);
+      },
+      error: () => {
+        this.result.set('Conversion failed.');
+      }
+    });
   }
 
   swap() {
